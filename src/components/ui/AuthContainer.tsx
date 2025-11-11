@@ -1,21 +1,32 @@
-import{FontAwesome} from "@expo/vector-icons";
+import { FontAwesome6 } from "@expo/vector-icons";
 import React from "react";
-import { Text, View } from "react-native";
+import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { global } from "./styles";
 
 type Props = {
     title:string;
     subtitle?:string;
-    icon?:keyof typeof FontAwesome.glyphMap;
-    /*children: React.ReactNode;*/
+    icon?:keyof typeof FontAwesome6.glyphMap;
+    children: React.ReactNode;
 }
 
 
-export default function AuthContainer({title,subtitle,icon,/*children*/}: Props){
+export default function AuthContainer({title,subtitle,icon,children}: Props){
     return(
-        <View>
-            <FontAwesome name={icon} size={25} color="blue"/>
-            <Text>{title}</Text>
-            <Text>{subtitle}</Text>
-        </View>
+        <SafeAreaView style ={global.safeArea}>
+        <KeyboardAvoidingView behavior ={Platform.OS === "ios" ? "padding":"height"} style={global.keyboardAvoiding}>
+            <ScrollView style = {global.container}>
+            <View style ={global.header}>
+                {!! icon && <FontAwesome6 name={icon} size={25} color="purple"/>}
+                <Text style = {global.title}>{title}</Text>
+                {!! subtitle && <Text style = {global.subtitle}>{subtitle}</Text>}
+            </View>
+            <View style ={global.content}>
+              {children}
+            </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
+        </SafeAreaView>
     );
 }
