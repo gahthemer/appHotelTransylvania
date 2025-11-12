@@ -1,4 +1,6 @@
+import { Label } from "@react-navigation/elements";
 import { Dimensions, StyleSheet } from "react-native";
+import Login from "../../app/(auth)";
 const{ width,height }= Dimensions.get("window");
 
 
@@ -37,5 +39,44 @@ export const global = StyleSheet.create({
         shadowRadius:10,
         shadowOffset:{width:0,height:2},
         elevation: 2,
+    },
+    inputGroup: {
+        marginBottom: height * 0.02,
+
+    },
+    label: {
+      fontSize: 14,
+      fontWeight:"600",
+      color: "#420350ff",
+      marginBottom: height * 0.01  
+    },
+
+    inputIcon: {
+        backgroundColor: "pink",
+        paddingLeft:width * 0.02,
+        flexDirection: "row",
+        alignItems: "center",
+        borderWidth:2,
+        borderColor: "#420350ff",
+        borderRadius:10
+    },
+
+    inputError: {
+        backgroundColor:"#fed5d5ff",
+        borderColor:"rgba(139,0,0,1)",
+
+    },
+    input: {
+        flex:1,
+        fontSize:16,
+        color:"#000",
+        fontWeight:"600",
+        paddingHorizontal: width * 0.02
+    },
+    errorText: {
+        color:"red",
+        fontWeight: "600",
+        fontSize:15,
+        marginTop: height * 0.01
     },
 })

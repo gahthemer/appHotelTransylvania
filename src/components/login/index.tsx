@@ -1,10 +1,10 @@
 import { Label } from "@react-navigation/elements";
-import {TextField} from "../ui/TextFild";
+import TextField from "../ui/TextFild";
 import AuthContainer from "../ui/AuthContainer";
 import { View } from "react-native";
 
 
-export function RenderLogin(){
+const RenderLogin = () => {
     return(
         <AuthContainer
                 title="Bem-vindo"
@@ -15,8 +15,9 @@ export function RenderLogin(){
                 label = "E-mail"
                 icon = "email">
             </TextField>
-
         </AuthContainer>
     
     )
-}
+};
+
+export default RenderLogin;
