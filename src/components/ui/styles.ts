@@ -31,7 +31,7 @@ export const global = StyleSheet.create({
         marginTop:  height * 0.02,
     },
     content: {
-        backgroundColor:"purple",
+        backgroundColor:"#9c5abbc9",
         borderRadius:10,
         padding: width * 0.02,
         shadowColor: "#000",
@@ -52,7 +52,7 @@ export const global = StyleSheet.create({
     },
 
     inputIcon: {
-        backgroundColor: "pink",
+        backgroundColor: "#fff",
         paddingLeft:width * 0.02,
         flexDirection: "row",
         alignItems: "center",
@@ -79,4 +79,21 @@ export const global = StyleSheet.create({
         fontSize:15,
         marginTop: height * 0.01
     },
+    eyeIcon: {
+        position: "absolute",
+        right:12,
+        top:42
+    },
+    primaryButton: {
+        backgroundColor:"#9c5abbc9",
+        borderRadius:10,
+        alignItems:"center",
+    },
+    primaryButtonDisacled: {
+        backgroundColor:"#420350ff",
+        borderRadius:10,
+    },
+    primaryButtonText: {
+        color: "#fff"
+    }
 })
