@@ -1,6 +1,4 @@
-import { Label } from "@react-navigation/elements";
 import { Dimensions, StyleSheet } from "react-native";
-import Login from "../../app/(auth)";
 const{ width,height }= Dimensions.get("window");
 
 
@@ -13,8 +11,8 @@ export const global = StyleSheet.create({
         flex:1
     },
     container: {
-        paddingHorizontal: width * 0.07,
-        paddingVertical: height * 0.07,
+        paddingHorizontal: width * 0.05,
+        paddingVertical: height * 0.05,
     },
     header: {
         alignItems:"center",
@@ -94,6 +92,8 @@ export const global = StyleSheet.create({
         borderRadius:10,
     },
     primaryButtonText: {
-        color: "#fff"
+        color: "#fff",
+        fontSize:17,
+        fontWeight:600
     }
 })

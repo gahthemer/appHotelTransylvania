@@ -1,13 +1,17 @@
 import { Label } from "@react-navigation/elements";
 import TextField from "../ui/TextFild";
 import AuthContainer from "../ui/AuthContainer";
-import { TouchableOpacity, View } from "react-native";
+import { Dimensions, TouchableOpacity, View } from "react-native";
 import PasswordField from "../ui/PasswordField";
 import { global } from "../ui/styles";
 import { Text } from "@react-navigation/elements";
+import { useRouter } from "expo-router";
+
 
 
 const RenderLogin = () => {
+    const router = useRouter();
+    const {width,height} = Dimensions.get("window");
     return(
         
         <AuthContainer
@@ -29,9 +33,21 @@ const RenderLogin = () => {
                 placeholder="*********"
         />
 
+        <View style={{marginTop:height * 0.03}}>
+            <TouchableOpacity onPress={() => router.push("/(auth)/resetPassword")}>
+                <Text style = {{color:"#",fontSize:17}}>Esqueci minha senha</Text>
+            </TouchableOpacity>
+
+            </View>
+        <View>
         <TouchableOpacity style={[global.primaryButton]}>
             <Text style={global.primaryButtonText}>Entrar</Text>
         </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => router.push("/(auth)/register")} style={{alignItems:"center",marginTop:height * 0.03}}>
+                <Text style = {{color:"#",fontSize:17,fontWeight:600}}>Cadastre-se</Text>
+            </TouchableOpacity>
+        </View>
 
         </AuthContainer>
     
