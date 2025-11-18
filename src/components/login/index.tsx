@@ -24,7 +24,7 @@ const RenderLogin = () => {
                 icon = "email"
                 placeholder="user@email.com"
                 keyboardType="email-address"
-                 >
+                >
             </TextField>
 
             <PasswordField
@@ -40,7 +40,7 @@ const RenderLogin = () => {
 
             </View>
         <View>
-        <TouchableOpacity style={[global.primaryButton]}>
+        <TouchableOpacity onPress={() => router.push("/(auth)/register")} style={{alignItems:"center",marginTop:height * 0.03}}>
             <Text style={global.primaryButtonText}>Entrar</Text>
         </TouchableOpacity>
 

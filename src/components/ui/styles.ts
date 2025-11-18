@@ -11,8 +11,7 @@ export const global = StyleSheet.create({
         flex:1
     },
     container: {
-        paddingHorizontal: width * 0.05,
-        paddingVertical: height * 0.05,
+    
     },
     header: {
         alignItems:"center",
@@ -43,10 +42,10 @@ export const global = StyleSheet.create({
 
     },
     label: {
-      fontSize: 14,
-      fontWeight:"600",
-      color: "#420350ff",
-      marginBottom: height * 0.01  
+        fontSize: 14,
+        fontWeight:"600",
+        color: "#420350ff",
+        marginBottom: height * 0.01  
     },
 
     inputIcon: {

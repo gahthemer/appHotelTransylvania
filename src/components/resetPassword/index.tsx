@@ -24,12 +24,18 @@ const RenderReset = () => {
                 icon = "email"
                 placeholder="user@email.com"
                 keyboardType="email-address"
-                 >
+                >
             </TextField>
         <View>
         <TouchableOpacity style={[global.primaryButton]}>
             <Text style={global.primaryButtonText}>Entrar</Text>
         </TouchableOpacity>
+        <View style={{alignItems: "center", marginTop: height * 0.04}}>
+            <TouchableOpacity onPress={() => router.back()}>
+                <Text style={{color: "#2F4156", fontWeight: 600, fontSize: 17}}>Já possui uma conta? Faça Login</Text>
+            </TouchableOpacity>
+        
+        </View>
         </View>
 
         </AuthContainer>

@@ -4,6 +4,7 @@ import AuthContainer from "../ui/AuthContainer";
 import PasswordField from "../ui/PasswordField";
 import { global } from "../ui/styles";
 import TextField from "../ui/TextFild";
+import { router } from "expo-router";
 
 
 const Renderregister = () => {
@@ -18,6 +19,7 @@ const Renderregister = () => {
             <TextField
                 label = "Nome"
                 placeholder="Digite seu nome"
+                icon = "person-outline"
                 keyboardType="email-address"
                 >
             </TextField>   
@@ -57,8 +59,15 @@ const Renderregister = () => {
         />
         <View>
         <TouchableOpacity style={[global.primaryButton]}>
-            <Text style={global.primaryButtonText}>Entrar</Text>
+            <Text style={global.primaryButtonText}>Cadastrar</Text>
         </TouchableOpacity>
+
+        <View style={{alignItems: "center", marginTop: height * 0.04}}>
+            <TouchableOpacity onPress={() => router.back()}>
+                <Text style={{color: "#2F4156", fontWeight: 600, fontSize: 17}}>Já possui uma conta? Faça Login</Text>
+            </TouchableOpacity>
+        
+        </View>
 
 
         </View>
