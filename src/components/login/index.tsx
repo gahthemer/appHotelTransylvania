@@ -40,7 +40,7 @@ const RenderLogin = () => {
 
             </View>
         <View>
-        <TouchableOpacity onPress={() => router.push("/(auth)/register")} style={{alignItems:"center",marginTop:height * 0.03}}>
+        <TouchableOpacity onPress={() => router.push("../explore")} style={{alignItems:"center",marginTop:height * 0.03}}>
             <Text style={global.primaryButtonText}>Entrar</Text>
         </TouchableOpacity>
 

@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { global } from "./styles";
 
 type Props = {
-    title:string;
+    title?:string;
     subtitle?:string;
     icon?:keyof typeof FontAwesome6.glyphMap;
     children: React.ReactNode;
@@ -19,7 +19,7 @@ const AuthContainer = ({title,subtitle,icon,children}: Props) => {
             <ScrollView style = {global.container}>
             <View style ={global.header}>
                 {!! icon && <FontAwesome6 name={icon} size={25} color="purple"/>}
-                <Text style = {global.title}>{title}</Text>
+                {!!title && <Text style = {global.title}>{title}</Text>}
                 {!! subtitle && <Text style = {global.subtitle}>{subtitle}</Text>}
             </View>
             <View style ={global.content}>
