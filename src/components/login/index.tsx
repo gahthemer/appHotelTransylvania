@@ -19,6 +19,8 @@ const RenderLogin = () => {
                 subtitle="Faça seu login para continuar!"
                 icon="hotel">
 
+            <View style ={global.content}>
+
             <TextField
                 label = "E-mail"
                 icon = "email"
@@ -48,6 +50,7 @@ const RenderLogin = () => {
                 <Text style = {{color:"#",fontSize:17,fontWeight:600}}>Cadastre-se</Text>
             </TouchableOpacity>
         </View>
+    </View>
 
         </AuthContainer>
     

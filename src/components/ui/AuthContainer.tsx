@@ -22,7 +22,7 @@ const AuthContainer = ({title,subtitle,icon,children}: Props) => {
                 {!!title && <Text style = {global.title}>{title}</Text>}
                 {!! subtitle && <Text style = {global.subtitle}>{subtitle}</Text>}
             </View>
-            <View style ={global.content}>
+            <View>
                 {children}
             </View>
             </ScrollView>
