@@ -1,11 +1,10 @@
-import { Label } from "@react-navigation/elements";
-import TextField from "../ui/TextFild";
-import AuthContainer from "../ui/AuthContainer";
-import { Dimensions, TouchableOpacity, View } from "react-native";
-import PasswordField from "../ui/PasswordField";
-import { global } from "../ui/styles";
 import { Text } from "@react-navigation/elements";
 import { useRouter } from "expo-router";
+import { Dimensions, TouchableOpacity, View } from "react-native";
+import AuthContainer from "../ui/AuthContainer";
+import PasswordField from "../ui/PasswordField";
+import { global } from "../ui/styles";
+import TextField from "../ui/TextField";
 
 
 

@@ -1,8 +1,8 @@
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
-import TextField from "./TextFild";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { global } from "./styles";
+import TextField from "./TextField";
 
 
 type Props =  React.ComponentProps<typeof TextField>;

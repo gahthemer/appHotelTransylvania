@@ -1,10 +1,10 @@
 import { Text } from "@react-navigation/elements";
+import { router } from "expo-router";
 import { Dimensions, TouchableOpacity, View } from "react-native";
 import AuthContainer from "../ui/AuthContainer";
 import PasswordField from "../ui/PasswordField";
 import { global } from "../ui/styles";
-import TextField from "../ui/TextFild";
-import { router } from "expo-router";
+import TextField from "../ui/TextField";
 
 
 const Renderregister = () => {

@@ -1,39 +1,27 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Tabs } from "expo-router";
+import "../../components/ui/styles";
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
-const  TabLayout = () =>   {
+const RootLayout = () => {
     return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: '#420350ff',
-        tabBarInactiveTintColor: "#bac4d6ff",
-        headerShown:false,
-        tabBarStyle:{
-            backgroundColor:"#7c4988ff",
-        }
-    }}>
-        <Tabs.Screen
-        name="explore"
-        options={{
-        title: 'Explore',
-        tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
-        }}
-    />
-    <Tabs.Screen
-        name="reservations"
-        options={{
-        title: 'Reservations',
-        tabBarIcon: ({ color }) => <FontAwesome size={28} name="suitcase" color={color} />,
-        }}
-    />
-
-    <Tabs.Screen
-        name="account"
-        options={{
-        title: 'Account',
-        tabBarIcon: ({ color }) => <FontAwesome size={28} name="user" color={color} />,
-        }}
-    />
-    </Tabs>
-);
+        <React.Fragment>
+            <StatusBar style="auto"/>
+            <Tabs screenOptions={{
+                tabBarActiveTintColor: "#420350ff",
+                tabBarInactiveTintColor: "#f9ddffff",
+                headerShown: false,
+                tabBarStyle: {
+                    backgroundColor: "#824590ff",
+                }
+            }}>             
+                <Tabs.Screen name="explore" options={{title: 'Pesquisar',tabBarIcon: ({ color }) => (<FontAwesome5 name="search" size={24} color={color} />),}} />
+                <Tabs.Screen name="account" options={{ title: 'Minha Conta', tabBarIcon: ({ color }) => (<FontAwesome5 name="user-circle" size={24} color={color} />),}} />
+                <Tabs.Screen name="reservations" options={{ title: 'Reservas',tabBarIcon: ({ color }) => (<FontAwesome5 name="briefcase" size={24} color={color} />),}} />
+            </Tabs>
+        </React.Fragment>
+    )
 }
 
-export default TabLayout;
+export default RootLayout;
