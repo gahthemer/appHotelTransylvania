@@ -5,29 +5,32 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { global } from "./styles";
 
 type Props = {
-    title?:string;
-    subtitle?:string;
-    icon?:keyof typeof FontAwesome6.glyphMap;
-    children: React.ReactNode;
-}
+title?: string;   
+subtitle?: string;
+icon?: keyof typeof FontAwesome6.glyphMap;
+children: React.ReactNode;
+};
 
+const AuthContainer = ({ title, subtitle, icon, children }: Props) => {
+return (
+<SafeAreaView style={global.safeArea}>
+<KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={global.keyboardAvoiding}
+>
+<ScrollView contentContainerStyle={global.container}>
+<View style={global.header}>
 
-const AuthContainer = ({title,subtitle,icon,children}: Props) => {
-    return(
-        <SafeAreaView style ={global.safeArea}>
-        <KeyboardAvoidingView behavior ={Platform.OS === "ios" ? "padding":"height"} style={global.keyboardAvoiding}>
-            <ScrollView style = {global.container}>
-            <View style ={global.header}>
-                {!! icon && <FontAwesome6 name={icon} size={25} color="purple"/>}
-                {!!title && <Text style = {global.title}>{title}</Text>}
-                {!! subtitle && <Text style = {global.subtitle}>{subtitle}</Text>}
-            </View>
-            <View>
-                {children}
-            </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
-        </SafeAreaView>
-    );
-}
+            {!!icon && <FontAwesome6 name={icon} size={30} color="purple" />}
+            {!!title && <Text style={global.title}>{title}</Text>}  
+            {!!subtitle && <Text style={global.subtitle}>{subtitle}</Text>}
+
+        </View>
+<View>{children}</View> {/* Retirada a estilização global.content para não impactar no 
+          componente AuthContainer a ser chamado em outras telas */}
+</ScrollView>
+</KeyboardAvoidingView>
+</SafeAreaView>
+);
+};
 export default AuthContainer;

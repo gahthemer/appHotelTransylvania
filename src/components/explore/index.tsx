@@ -3,6 +3,7 @@ import AuthContainer from "../ui/AuthContainer";
 import DateSelector from "../ui/DateSelector";
 import TextField from "../ui/TextField";
 import { useState } from "react";
+import RoomCard from "../ui/RoomCard";
 
 const RenderExplorer = () => {
     const {width,height} = Dimensions.get("window");
@@ -46,8 +47,19 @@ const RenderExplorer = () => {
             />
             )}
             </View>
+            <RoomCard
+            label="Apartamento"
+            icon={{
+                lib:"FontAwesome5",
+                name:"bed",
+            }}
+            description={{
+                title:"Caracteristicas do quarto",
+                text: "1 cama de casal..",
+                price: 180
+            }}
+        />
         </AuthContainer>
-    );
-};
+    )};
 
 export default RenderExplorer
