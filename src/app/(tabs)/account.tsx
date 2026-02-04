@@ -1,19 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import RenderAccount from "@/components/account";
 
-const  Explore = () =>  {
-return (
-    <View style={styles.container}>
-    <Text>Account</Text>
-    </View>
-);
+const Account = () => {
+    return (
+        <RenderAccount />
+    );
 }
 
-const styles = StyleSheet.create({
-container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-},
-});
-
-export default Explore;
+export default Account;
