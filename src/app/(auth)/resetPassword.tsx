@@ -1,8 +1,10 @@
-import RenderReset from "../../components/resetPassword";
+import RenderResetPassword from "@/components/resetPassword";
 
-const rest = () => {
-    return (
-        <RenderReset />
-    );
+const ResetPassword = () => {
+      return (
+        <RenderResetPassword />
+   );
+
 }
-export default rest;
+
+export default ResetPassword;

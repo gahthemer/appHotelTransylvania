@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "appHotelTransylvania",
-    "slug": "appHotelTransylvania",
+    "name": "mobileHotel",
+    "slug": "mobileHotel",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "apphoteltransylvania",
+    "scheme": "mobilehotel",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

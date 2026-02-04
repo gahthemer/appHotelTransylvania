@@ -1,8 +1,10 @@
-import Renderregister from "../../components/register";
+import RenderRegister from "@/components/register";
 
-const register = () => {
-    return (
-        <Renderregister />
-    );
+const Register = () => {
+      return (
+        <RenderRegister />
+   );
+
 }
-export default register;
+
+export default Register;
