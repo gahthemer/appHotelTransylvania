@@ -5,6 +5,7 @@ type Props = {
   onSelectSpin: (guests: number) => void;
   minGuests: number;
   maxGuests: number;
+  mainGuests:number;
   step: number;
   colorMax: string;
   colorMin: string;

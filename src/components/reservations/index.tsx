@@ -91,7 +91,7 @@ async function apiListReservations(page: number, pageSize: number): Promise<{ da
   });
 
   // Limita a 3 páginas na simulação
-  const hasMore = page < 3;
+  const hasMore = page < 1;
   return { data: base, hasMore };
 }
 
@@ -203,7 +203,7 @@ const RenderReservations = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { data, hasMore } = await apiListReservations(1, 10);
+        const { data, hasMore } = await apiListReservations(1, 5);
         setItems(data);
         setHasMore(hasMore);
       } finally {

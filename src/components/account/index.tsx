@@ -60,6 +60,7 @@ export default function ProfileScreen() {
   const [name, setName] = useState('Aspas');
   const [email, setEmail] = useState('Aspas@gmail.com');
   const [cpf, setCpf] = useState('8738291111');
+  const [telefone, settelefone] = useState('8738291111');
   const [profilePhoto, setProfilePhoto] = useState<string | null>(null);
 
   // ─── Alteração de senha ────────────────────────────
@@ -237,6 +238,15 @@ export default function ProfileScreen() {
             keyboardType="email-address"
             autoCapitalize="none"
             onBlur={() => setTouched((prev) => ({ ...prev, email: true }))}
+          />
+
+          <TextField
+            label="Telefone"
+            value={telefone}
+            onChangeText={settelefone}
+            placeholder="Somente números"
+            keyboardType="number-pad"
+            onBlur={() => setTouched((prev) => ({ ...prev, telefone: true }))}
           />
 
           <TextField
