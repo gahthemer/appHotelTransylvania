@@ -5,11 +5,13 @@ import AuthContainer from "../ui/AuthContainer";
 import PasswordField from "../ui/PasswordField";
 import TextField from "../ui/TextField";
 import { global } from "../ui/styles";
+import { useAuth } from "@/contexts/AuthContext";
 
 function isValidEmail(email: string) {
   return /^[^\s@&='"!]@[^\s@&='"!].[^\s@&='"!]$/.test(email);
 }
 const RenderLogin = () => {
+  const { signIn } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,19 +38,10 @@ const RenderLogin = () => {
   const handleSubmit = async () => {
     try {
       setLoading(true);
-      console.log("[LOGIN] Tentando login com: ", {
-        email: email,
-        password: password,
-      });
-      await new Promise((req) => setTimeout(req, 2000));
-      if (email === "Aspas@gmail.com" && password === "123") {
-        Alert.alert("Login bem-sucedido!");
-        router.replace("/(tabs)/explorer");
-      } else {
-        Alert.alert("Login inválido!");
-        return;
-      }
-    } catch (erro) {
+      await signIn(email.trim(),password);
+      Alert.alert("Login bem-sucedido!");
+      router.replace("/(tabs)/explorer");
+    } catch (erro: any) {
       Alert.alert("Erro", "Falha ao tentar logar!");
     } finally {
       setLoading(false);
